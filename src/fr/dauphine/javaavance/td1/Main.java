@@ -26,11 +26,13 @@ public class Main {
 //        System.out.println(p2);
    //     ====================================================
 
-        Polyline polyline = new Polyline(2);
-        polyline.ajoute(p);
-        polyline.ajoute(p3);
-        polyline.ajoute(p4);
-        System.out.println(polyline);
+//        Polyline polyline = new Polyline(3);
+//        polyline.add(p);
+//        polyline.add(p3);
+//        polyline.add(null);
+////        polyline.ajoute(p4);
+//        System.out.println(polyline.contains(p));
+//        System.out.println(polyline.contains(null));
 
 
 
