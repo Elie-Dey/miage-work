@@ -37,16 +37,17 @@ public class Point {
         return (this.x == point.x && this.y == point.y);
     }
 
-    @Override
-    public boolean equals(Object o) {
-        Point p = (Point) o;
-        return this.isSameAs(p);
+//    @Override
+//    public boolean equals(Object o) {
+//
+//        Point p = (Point) o;
+//        return this.isSameAs(p);
 
 //        if (this == o) return true;
 //        if (!(o instanceof Point)) return false;
 //        Point point = (Point) o;
 //        return x == point.x && y == point.y;
-    }
+   // }
     public Point translate(int dx, int dy){
         Point newPoint = new Point(x + dx,y + dy);
         return newPoint;

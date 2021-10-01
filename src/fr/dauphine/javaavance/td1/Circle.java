@@ -26,11 +26,20 @@ public class Circle {
     }
     public boolean contains(Point p){
         //Calcul de la distance avec Pythagore
-        Double distance = Math.sqrt((double) Math.pow(center.getX() - p.getX(),2) + (double) Math.pow(center.getY() - p.getY(),2));
-
+        double distance = Math.sqrt((double) Math.pow(center.getX() - p.getX(),2) + (double) Math.pow(center.getY() - p.getY(),2));
+        System.out.println(distance);
         return distance <= radius;
     }
-//    public boolean contains(Point p, Circle...circles){
-//
-//    }
+    public boolean contains(Point p, Circle...circles){
+        boolean isPresent = false;
+        if(circles == null)
+            return isPresent;
+        else {
+            for (Circle circle : circles) {
+                if(circle.contains(p))
+                    isPresent = true;
+            }
+        }
+        return  isPresent;
+    }
 }
