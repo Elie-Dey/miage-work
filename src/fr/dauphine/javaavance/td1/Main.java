@@ -5,10 +5,10 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-       Point p = new Point(2,8);
+   //    Point p = new Point(2,8);
 //        Point p1 = p;
-       Point p3 = new Point(1,8);
-        Point p4 = new Point(9,8);
+//       Point p3 = new Point(1,8);
+//        Point p4 = new Point(9,8);
 //        System.out.println(p1 == p);
 //        System.out.println(p1 == p3);
 //
@@ -34,7 +34,15 @@ public class Main {
 //        System.out.println(polyline.contains(p));
 //        System.out.println(polyline.contains(null));
 
+Point p = new Point(1,2);
+Circle c = new Circle(p,1);
 
+Circle c2 = new Circle(p, 2);
+c2.translate(1,1);
+
+        System.out.println(p);
+
+        System.out.println(c + " " + c2);
 
     }
 }

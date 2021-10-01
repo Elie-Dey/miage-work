@@ -50,5 +50,9 @@ public class Point {
 //        Point point = (Point) o;
 //        return x == point.x && y == point.y;
     }
+    public Point translate(int dx, int dy){
+        Point newPoint = new Point(x + dx,y + dy);
+        return newPoint;
+    }
 
 }
