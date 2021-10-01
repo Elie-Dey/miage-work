@@ -34,10 +34,7 @@ public class Point {
                 '}';
     }
     public Boolean isSameAs(Point point){
-        if(this.x == point.x && this.y == point.y)
-            return true;
-        else
-            return false;
+        return (this.x == point.x && this.y == point.y);
     }
 
     @Override
