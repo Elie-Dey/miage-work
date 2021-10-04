@@ -33,8 +33,8 @@ public class Circle {
                 '}';
     }
     public Circle translate(int dx, int dy){
-            Point newCenter = new Point(center.getX() + dx, center.getY()+dy);
-            Circle newCercle = new Circle(newCenter, radius);
+         center = center.translate(dx, dy);
+         Circle newCercle = new Circle(center, radius);
             return  newCercle;
     }
     public double area(){
@@ -46,16 +46,16 @@ public class Circle {
         System.out.println(distance);
         return distance <= radius;
     }
-    public boolean contains(Point p, Circle...circles){
-        boolean isPresent = false;
-        if(circles == null)
-            return isPresent;
-        else {
-            for (Circle circle : circles) {
-                if(circle.contains(p))
-                    isPresent = true;
-            }
-        }
-        return  isPresent;
-    }
+//    public boolean contains(Point p, Circle...circles){
+//        boolean isPresent = false;
+//        if(circles == null)
+//            return isPresent;
+//        else {
+//            for (Circle circle : circles) {
+//                if(circle.contains(p))
+//                    isPresent = true;
+//            }
+//        }
+//        return  isPresent;
+//    }
 }

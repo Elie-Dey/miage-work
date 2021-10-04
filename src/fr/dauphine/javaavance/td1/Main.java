@@ -4,56 +4,36 @@ import java.util.ArrayList;
 
 public class Main {
 
+    public static boolean contains(Point p, Circle...circles){
+        boolean isPresent = false;
+        if(circles == null)
+            return isPresent;
+        else {
+            for (Circle circle : circles) {
+                if(circle.contains(p))
+                    isPresent = true;
+            }
+        }
+        return  isPresent;
+    }
+    public static boolean contains(Point p, Ring...rings){
+        boolean isPresent = false;
+        if(rings == null)
+            return isPresent;
+        else {
+            for (Ring ring : rings) {
+                if(ring.contains(p))
+                    isPresent = true;
+            }
+        }
+        return  isPresent;
+    }
+
     public static void main(String[] args) {
-//       Point p = new Point(2,8);
-//        Point p1 = p;
-//       Point p3 = new Point(2,8);
-//        Point p4 = new Point(9,8);
-//        System.out.println(p1 == p);
-//        System.out.println(p1 == p3);
-//
-//      ArrayList<Point> list = new ArrayList<>();
-//        list.add(p);
-//        list.add(p3);
-//        list.add(p4);
-//
-//        System.out.println(list.indexOf(p1));
-//        System.out.println(list.indexOf(p3));
-//        System.out.println(list.indexOf(p4));
+        Circle c1 = new Circle(new Point(1,2), 1);
+        Circle c2 = new Circle(new Point(1,3), 2);
 
-        //System.out.println(p.isSameAs(p3));
-
-       // System.out.println(p.equals(p3));
-
-//        Point p2 = new Point(5,8);
-//        System.out.println(p.getNumberOfPoint());
-//        System.out.println(p2);
-   //     ====================================================
-
-//        Polyline polyline = new Polyline(3);
-//        polyline.add(p);
-//        polyline.add(p3);
-//        polyline.add(null);
-////        polyline.ajoute(p4);
-//        System.out.println(polyline.contains(p));
-//        System.out.println(polyline.contains(null));
-
-Point p = new Point(1,2);
-//        Point p2 = new Point(10,6);
-Circle c = new Circle(p,1);
-Circle c2 = new Circle(p, 2);
-
-        //System.out.println(c.contains(p2));
-c2.translate(1,1);
-c.getCenter().translate(1,1);
-//
-//        System.out.println(p);
-//
-      // System.out.println(c + " " + c2);
-        System.out.println(c);
-
-//        Ring r = new Ring(p, 5, 2);
-//        System.out.println(r);
+        System.out.println(contains(new Point(1,1), c1, c2));
     }
 }
 
