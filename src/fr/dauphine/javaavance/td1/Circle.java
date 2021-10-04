@@ -9,6 +9,22 @@ public class Circle {
         this.center = centerOftheCirle;
     }
 
+    public int getRadius() {
+        return radius;
+    }
+
+    public void setRadius(int radius) {
+        this.radius = radius;
+    }
+
+    public Point getCenter() {
+        return center;
+    }
+
+    public void setCenter(Point center) {
+        this.center = center;
+    }
+
     @Override
     public String toString() {
         return "Circle{" +
