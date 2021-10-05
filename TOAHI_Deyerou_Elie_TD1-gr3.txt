@@ -1,0 +1,72 @@
+1.(Voir fichier java)
+
+1. Auto-completion qui permet d'afficher
+2. On a une auto-completion de eclipse qui réconnait les mots clés java
+3. Pareil que pour sysout on a une auto-completion de qui nous permet d'implementer la methode toString() qui est la methode générale d'affichage des objets en java
+4. Eclipse nous propose la création d'un constructeur pour la classe Main.
+    1. Avec set, Eclispe nous propose de creer un setteur avec le l'attribut int orésent dans la classe
+    
+5. Avec ALT+SHIFT+R on a accès à toutes les informations liées à l'élement sélectionné au niveau de la classe, du projet. Pour des éléments natifs de java tel que la classe Main on des informations sur le scope.
+6. 
+
+## Exo2 Point
+
+1. Non, Parce que la classe ne comporte pas la methode main
+2. La classe TestPoint ne peux acceder aux variables x,y : Soit changement de la visibilité des variables ou utiliser des getteurs pour acceder aux variables 
+3. Les attributs ont besoins d'être en private pour pouvoir respecter l'encapsulation et ainsi controler la modification de ces attributs que par des methodes internes à la classe
+4. Un accesseur est une methode qui permet de retourner la valeur d'une variable privé. Pour avoir un retour sur les valeurs de x et y l'utilisation d'accesseur peut être neccessaire
+5. Lors de la création de l'appel au constructeur avec des noms de arguments différents des noms des attributs il n'est pas obligatoire de d'utiliser this.
+6. Lorsque les noms des arguments est identique à celui des attributs de la classe il faut préciser avec le mot clé this pour éviter toute ambiguïté. 
+7. Il faut creer une variable d'instrance static qui s'incremente à chaque création de nouveau point (Voir code class Point)
+8. Le constructeur fait la différence entre les constructeurs en fonction de la signature des différents constructeurs. Si un Point est crée avec un autre point en paramettre le second constructeur sera invoqué
+
+## Exo3 Equality
+
+1. Le programme affiche true et false. Parce que l'opérateur " == " verifie si les deux objets pointent vers une même addresse mémoire ce qui est le cas avec p2 et p1 tandis que p3 est un autre objet différent.
+2. Voir code 
+3. Le probleme: les 3 points p1,p2,p3 on la même valeur mais en terme d'objet il sont différents parce que la methode indexOf fait appel à la methode 
+par défaut equals la methode indexOf fait appel à la methode equals pour comparer les objets 
+donc pour regler le problème il faut redefinir a methode equals dans la classe point de sorte à ce que les objets soit comparés comme des points.
+
+---
+
+Questions bonus  : 
+
+1. Dans les collections la methode indexOf permet de retourner la première occurence d'un élement dans la collection et utilise la methode equals avec sa définition par défaut dans la classe objet de Java.
+ Sa définition par défaut compare les réferences de objets.
+2. Les opérateurs "==" et "≠=" comparent les type primitifs sur leurs valeur tandis que sur les objets ils les comparent selon leurs référence lors de la création
+3. Les méthodes verifie si l'objet est une instance d'une classe par défaut(String, Integer etc.) de Java ou si cette classe existe dans le package en cours. 
+
+## Exo4 Polyline
+
+1. Voir code
+2. (Voir code) Si le nombre de point ajouté est plus grand que la taille du tableau on aura une exception. 
+Pour resoudre le problème on peut passer en ArrayList qui a une taille plus flexible ou ecrit une methode add() dynamique
+3. Voir code commentaire(Ancien code ) class Polyline
+4. Voir code commentaire(Ancien code ) class Polyline
+5. On a une erreur car la methode n'accepte pas de valeur null
+6. Voir code
+
+## Exo5 Mutability and circle
+
+1. Les différentes options pour écrire translate(dx, dy): Soit les paramettres dx et dy sont rajoutés aux coordonnées du point
+2. Voir code
+3. Voir code
+4. Voir code
+5. Le problème est que la translation du centre du cercle  n'est pas prise en compte. Pour eviter cela il ne faut pas translater le centre  dans le main 
+mais plutôt directement dans la methode translate du cercle qui  fera appel à la methode de translation definie dans la classe Point.
+6. Voir code 
+7. Voir code
+8. Voir code
+9. La methode contains doit être definie dans la classe main en tant que methode static,car verifier qu'un point est contenu dans un ou plusieurs cercle est independant de la class cercle
+ donc l'appel de la methode doit se faire en dehors de la classe Circle.
+
+## Exo6 Anneaux
+
+1. L'heritage est possible car un anneau est un type de cercle donc l'utilisation des methodes de la classe Cercle peuvent être réutilisées dans la classe ring
+2. Voir code
+3. Voir code 
+4. Avec System.out.println(ring);  c'est la methode de la classe mère Circle qui est invoquée pour permettre l'affichage des informations de l'anneau. 
+La methode toString de la classe mère elle ne prend pas en compte le rayon externe. il faut donc redefinir la methode toString dans la classe Ring
+5. Voir code.
+6. Voir code.

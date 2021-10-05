@@ -34,4 +34,17 @@ public class Ring  extends  Circle{
     }
    // public boolean contains(Point p, Ring...rings){
 
+//    public static boolean contains(Point p, Ring...rings){
+//        boolean isPresent = false;
+//        if(rings == null)
+//            return isPresent;
+//        else {
+//            for (Ring ring : rings) {
+//                if(ring.contains(p))
+//                    isPresent = true;
+//            }
+//        }
+//        return  isPresent;
+//    }
+
 }
