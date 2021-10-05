@@ -7,7 +7,7 @@ import java.util.Objects;
 public class Polyline {
 
     private LinkedList<Point> listOfPoints;
-    Polyline(){
+    public Polyline(){
         listOfPoints = new LinkedList<>();
     }
     //      ANCIEN CODE

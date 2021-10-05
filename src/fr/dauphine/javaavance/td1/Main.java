@@ -26,7 +26,9 @@ public class Main {
         return  isPresent;
     }
     public static void main(String[] args) {
+        System.out.println("la vie est belle");
         //        Circle c1 = new Circle(new Point(1,2), 1);
+//        Circle c1 = new Circle(new Point(1,2), 1);
 //        Circle c2 = new Circle(new Point(1,3), 2);
 //
 //        System.out.println(contains(new Point(1,1), c2));
