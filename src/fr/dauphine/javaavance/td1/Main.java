@@ -30,10 +30,10 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Circle c1 = new Circle(new Point(1,2), 1);
-        Circle c2 = new Circle(new Point(1,3), 2);
-
-        System.out.println(contains(new Point(1,1), c2));
+//        Circle c1 = new Circle(new Point(1,2), 1);
+//        Circle c2 = new Circle(new Point(1,3), 2);
+//
+//        System.out.println(contains(new Point(1,1), c2));
     }
 }
 
