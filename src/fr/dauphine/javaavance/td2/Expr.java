@@ -1,12 +1,21 @@
 package fr.dauphine.javaavance.td2;
 
 public class Expr {
-    private  final int value;
+    private double interValue;
 
-    public Expr(int value) {
-        this.value = value;
+    /**
+     *
+     * @param interValue
+     */
+    public Expr(double interValue) {
+        this.interValue = interValue;
     }
-    public  int eval(){
-        return value;
+
+    /**
+     *
+     * @return internValue
+     */
+    public double eval(){
+        return interValue;
     }
 }
