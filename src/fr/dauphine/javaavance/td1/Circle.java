@@ -59,16 +59,16 @@ public class Circle {
 //        return  isPresent;
 //    }
 
-//        public static boolean contains(Point p, Circle...circles){
-//        boolean isPresent = false;
-//        if(circles == null)
-//            return isPresent;
-//        else {
-//            for (Circle circle : circles) {
-//                if(circle.contains(p))
-//                    isPresent = true;
-//            }
-//        }
-//        return  isPresent;
-//    }
+        public static boolean contains(Point p, Circle...circles){
+        boolean isPresent = false;
+        if(circles == null)
+            return isPresent;
+        else {
+            for (Circle circle : circles) {
+                if(circle.contains(p))
+                    isPresent = true;
+            }
+        }
+        return  isPresent;
+    }
 }

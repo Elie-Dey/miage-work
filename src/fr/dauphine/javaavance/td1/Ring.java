@@ -32,19 +32,18 @@ public class Ring  extends  Circle{
         Double distance = Math.sqrt((double) Math.pow(center.getX() - p.getX(),2) + (double) Math.pow(center.getY() - p.getY(),2));
         return distance <= externRadius;
     }
-   // public boolean contains(Point p, Ring...rings){
 
-//    public static boolean contains(Point p, Ring...rings){
-//        boolean isPresent = false;
-//        if(rings == null)
-//            return isPresent;
-//        else {
-//            for (Ring ring : rings) {
-//                if(ring.contains(p))
-//                    isPresent = true;
-//            }
-//        }
-//        return  isPresent;
-//    }
+    public static boolean contains(Point p, Ring...rings){
+        boolean isPresent = false;
+        if(rings == null)
+            return isPresent;
+        else {
+            for (Ring ring : rings) {
+                if(ring.contains(p))
+                    isPresent = true;
+            }
+        }
+        return  isPresent;
+    }
 
 }
