@@ -18,4 +18,11 @@ public class Expr {
     public double eval(){
         return interValue;
     }
+
+    @Override
+    public String toString() {
+        return "Expr{" +
+                "interValue=" + interValue +
+                '}';
+    }
 }

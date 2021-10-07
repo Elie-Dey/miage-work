@@ -7,6 +7,8 @@ public class Main {
         System.out.println(val.eval());
         Expr add = new Add(new Value(327.0), val);
         System.out.println(add.eval());
+        Expr r = new Racine(new Value(2));
+        System.out.println(r);
 //        Mere mere=new Mere();
 //        Mere mereFille=new Fille();
 //        Fille fille=new Fille();

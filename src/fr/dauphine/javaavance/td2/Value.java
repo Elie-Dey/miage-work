@@ -5,4 +5,5 @@ public class Value  extends  Expr{
     public Value(double interValue) {
         super(interValue);
     }
+
 }
