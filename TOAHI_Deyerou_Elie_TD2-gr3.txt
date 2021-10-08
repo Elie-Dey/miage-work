@@ -1,0 +1,57 @@
+## Exo 1
+
+1. 42 42 24 24 24 24 : 
+
+Dans un premier temps l'instanciation de la classe mère permet d'acceder aux methodes de cette dernière. L'appel des deux methodes retourne donc 42.  
+
+Dans la classe Fille on a une rédefintion de la methode meth de la classe Mere qui a une visibilité protected donc accessible aux classes filles. 
+
+Dans la redefinition de la methode meth la valeur de retour est 24. Lors de l'instanciation dans le Main c'est la methode meth redefinie dans la classe fille qui est donc invoquée.
+
+Dans la dernière instruction, etant donné que un objet de la classe Fille est un type de la classe Mere il est possible de l'instancié de cette façon. 
+
+Donc on a directement les methodes de la classe Fille qui sont accessibles.
+
+2.  Dans la classe Fille l'objet à accès aux 2 methodes meth() celle de la classe Mere à laquelle il peut accedé avec l'instruction super.meth() et la methode meth() redefinie dans la classe Fille.
+
+L'accès se fait grâce à la reference vers la vTable de sa classe. L'objet accède à travers les index, ce tableau  qui contient les methodes de sa classe en commençant 
+par les super-classes si la classe d'origine de l'objet hérite d'autres classes.
+
+Un objet de type Fille dans le Main accède qu'a la methode meth() de la classe Fille c'est à dire celle redefinr par cette dernière.
+
+3. Lorsque les methodes meth() sont static, lors de l'appel de la methode par un objet de type Mere ou Fille seul la methode de la super classe Mere est invoquée du fait de sa visibilité static.
+
+La methode meth() rédefinie dans la classe Fille elle est invoquée lorsque un objet de la classe Fille fait appel à une methode de sa super classe qui elle est composée ou contient la methode meth(),
+ dans ce cas là c'est la version de la methode meth() à l'interieur de la classe Fille qui intervient car elle est considérée  comme spécifique à cette classe grâce au mot clé static donc invoqué en premiergn 
+
+## Exo2
+
+1. La methode miage() n'est definie que dans la classe Fille donc un objet de type Mere ne peut faire appel à la methode
+    
+    la methode e() est definie comme protected dans la classe Mere donc les classes qui héritent de Mere  peuvent implementées la  methode e() comme protected 
+  ou en cas de redefinition la visibilité ne peut être que protected, public ou sans modificateur de visibilité.
+    
+    Les methode i() et j() redefinissent les methodes de la classe Mere mais avec des retours différents et celà n'est pas possible dans l'héritage d'ou l'erreur
+    
+    la methode k() lève une exception global de la classe Exception mais la methode originale qu'elle redefinie qui est présente dans la classe Mere 
+elle leve une exception de type IOExeception qui est un type d'exeception. Donc la différence d'Exeception lévé par les 2 methodes étant différence cela crée une erreur.
+    
+    2. Voir code
+    3. Dans la surcharge les méthodes ont le nom mais de profils différents et sont présents dans une même classe. La bonne methode est choisie  
+à la compilition selon les arguments fourni à la methode.
+    
+    Dans la redéfinition les deux méthodes ont le même nom et de même profil dans 2 classes différentes.Une des deux classes hérite de l'autre. 
+La bonne methode est choisie lors de l'exécution.
+    
+    4. Après suppression des methodes qui créeent une erreur.Il y a 16 affichages : 
+        1. l'objet fille fait appel à la methode miage() présente dans la classe fille 
+        2. l'objet mereFille qui est définie comme un type d'objet Mere est casté en objet de type fille à part entière donc cet objet peut faire appel à la methode miage()
+        3. L'objet mere qui instancie la classe Mere à accès directement à la methode a() de la classe 
+        4. l'objet mereFille est casté en objet totalement de type Fille donc la methode a() de la classe Fille est invoquée. Ce cast est plus ou moins unitile ici car de toute manière il y a du 
+polymorphisme qui présent ici car les objets de la classe Fille sont stockés  dans le type de leur super-classe (la classe Mere). 
+Donc l'objet mereFille est un objet de type Fille donc à accès directement aux methode de la classe.
+        5. l'objet fille invoque la methode a() de la classe Fille car elle est redefinie dans celle-ci donc c'est cette methode qui invoquée en premier
+        6. le cast de l'objet mereFille n'a aucun effet car il est stocké en tant que new Fille() dès de la depart.
+ C'est du polymorphisme, un objet Fille est stocké dans sa super-classe.
+        7. Appel en premier de la methode b(Fille fille) redefinie par la classe Fille car l'objet est de type Fille.
+        8. verif si c sans param dans Fille sinon invoque dans la classe mère h

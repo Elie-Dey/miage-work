@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class Mere {
 
-    public void a() {System.out.println("Mere_a"); }
+ public void a() {System.out.println("Mere_a"); }
 void b(Fille fille) {System.out.println("Mere_b(Fille)");}
 void c() {System.out.println("Mere_c");}
 void c(Mere mere) {System.out.println("Mere_c(Mere)"); }
@@ -16,10 +16,10 @@ private void f() {System.out.println("Mere_f");}
  Object g() {System.out.println("Mere_g"); return 2;}
  int h() {System.out.println("Mere_h"); return 2;}
 void i() {System.out.println("Mere_i");}
- void j() throws Exception {System.out.println("Mere_j"); }
-void k() throws IOException {System.out.println("Mere_k"); }
- void l() throws Exception {System.out.println("Mere_l"); }
- void m() throws Exception, ArrayIndexOutOfBoundsException {System.out.println("Mere_m"); }
+// void j() throws Exception {System.out.println("Mere_j"); }
+//void k() throws IOException {System.out.println("Mere_k"); }
+// void l() throws Exception {System.out.println("Mere_l"); }
+// void m() throws Exception, ArrayIndexOutOfBoundsException {System.out.println("Mere_m"); }
 //    protected int meth=42;
 //    public void printMeth(){
 //        System.out.println(meth);

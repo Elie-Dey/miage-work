@@ -3,38 +3,44 @@ package fr.dauphine.javaavance.td2;
 public class Main {
 
     public static void main(String[] args) {
-        Expr val = new Value(1337.0);
-        System.out.println(val.eval());
-        Expr add = new Add(new Value(327.0), val);
-        System.out.println(add.eval());
-        Expr r = new Racine(new Value(2));
-        System.out.println(r);
-//        Mere mere=new Mere();
-//        Mere mereFille=new Fille();
-//        Fille fille=new Fille();
+//        Expr val = new Value(1337.0);
+//        System.out.println(val.eval());
+//        Expr add = new Add(new Value(327.0), val);
+//        System.out.println(add.eval());
+//        Expr r = new Racine(new Value(4));
+//        System.out.println(r);
+//        System.out.println(r.eval());
 //
-//        mere.miage();
-//        fille.miage();
-//        mereFille.miage();
-//        ((Fille)mereFille).miage();
+//        Expr e = new Add(new Value(350), add);
+//        System.out.println(e.eval());
+        Mere mere=new Mere();
+        Mere mereFille=new Fille();
+        Fille fille=new Fille();
+
 //
-//         mere.a();
-//        mereFille.a();
-//        fille.a();
-//        ((Mere)mereFille).a();
-//        mereFille.b(null);
-//
-//        mereFille.c();
-//        mereFille.c(mere);
-//        mereFille.c(mereFille);
-//        mereFille.c(fille);
-//        fille.c(fille);
-//
-//        mere.d();
-//        mereFille.d();
-//        mere.printF();
-//        mereFille.printF();
-//
+        //mere.miage();
+       //fait  fille.miage();
+        //mereFille.miage();
+        //fait((Fille)mereFille).miage();
+
+        //fait  mere.a();
+        //fait mereFille.a();
+        //fait fille.a();
+        //fait((Mere)mereFille).a();
+        //System.out.println(mereFille.getClass());
+       //fait mereFille.b(null);
+
+       //fait revoir mereFille.c();
+        mereFille.c(mere);
+        mereFille.c(mereFille);
+        mereFille.c(fille);
+        fille.c(fille);
+
+        mere.d();
+        mereFille.d();
+        mere.printF();
+        mereFille.printF();
+
 //        mereFille.j();
 //        mereFille.k();
 //        mereFille.l();

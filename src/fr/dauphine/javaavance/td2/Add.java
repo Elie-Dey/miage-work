@@ -1,7 +1,10 @@
 package fr.dauphine.javaavance.td2;
 
-public class Add extends  Expr{
-    public Add(Expr a, Expr b) {
-        super(a.eval() + b.eval());
-    }
+public class Add extends Expr {
+  private Expr firstExpression;
+  private Expr secondExpression;
+
+  Add(Expr myFirstExpressionToAdd, Expr mySecondExpressionToAdd) {
+
+  }
 }
