@@ -54,4 +54,13 @@ Donc l'objet mereFille est un objet de type Fille donc à accès directement aux
         6. le cast de l'objet mereFille n'a aucun effet car il est stocké en tant que new Fille() dès de la depart.
  C'est du polymorphisme, un objet Fille est stocké dans sa super-classe.
         7. Appel en premier de la methode b(Fille fille) redefinie par la classe Fille car l'objet est de type Fille.
-        8. verif si c sans param dans Fille sinon invoque dans la classe mère h
+	8. Lors de la compilation, les bonnes methodes correspondant aux objets crées sont invoquées après verification des signatures des methodes présentes dans la super classe et la classe fille. Ici la methode c() avec cette signature 
+c'est à dire qui ne prends aucun paramettre n'est présente que dans la classe Mère d'ou l'affichage de ce qui est definie dans cette classe.
+       9. azz
+       10. azz
+      11. azz
+       12. La methode c(fille) de la classe Fille est invoquée par les objets qui instancie  cette classe et la methode avec cette signature est présente que dans la classe Fille.
+       13. La methode d() de la classe Mere est invoquée par les objets qui instancie  cette classe.
+     14. 
+    15. les instanciations de la classe Mere ont un accès direct aux methodes de cette classe dont printF().
+    16. l'objet mereFille est de type [Fille.La](http://Fille.La) methode printF() n'est pas redefinie dans la classe Fille donc tous objets de cette fait invoque la methode printF() présente dans sa super classe c'est à dire la classe Mere.

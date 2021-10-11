@@ -7,10 +7,9 @@ public class Main {
 //        System.out.println(val.eval());
 //        Expr add = new Add(new Value(327.0), val);
 //        System.out.println(add.eval());
-//        Expr r = new Racine(new Value(4));
+//        Expr r = new Racine(new Value(4.0));
 //        System.out.println(r);
 //        System.out.println(r.eval());
-//
 //        Expr e = new Add(new Value(350), add);
 //        System.out.println(e.eval());
         Mere mere=new Mere();
@@ -30,16 +29,16 @@ public class Main {
         //System.out.println(mereFille.getClass());
        //fait mereFille.b(null);
 
-       //fait revoir mereFille.c();
+      //fait  mereFille.c();
         mereFille.c(mere);
         mereFille.c(mereFille);
         mereFille.c(fille);
-        fille.c(fille);
+       // fille.c(fille);
 
-        mere.d();
+        //mere.d();
         mereFille.d();
-        mere.printF();
-        mereFille.printF();
+//        mere.printF();
+//        mereFille.printF();
 
 //        mereFille.j();
 //        mereFille.k();
