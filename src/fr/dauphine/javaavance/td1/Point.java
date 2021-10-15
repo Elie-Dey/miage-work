@@ -6,7 +6,7 @@ public class Point {
     private int x;
     private int y;
     private static int numberOfPoint; // Variable interne qui nous permet d'avoir le nombre de point creer
-    Point(int x, int y ){
+    public Point(int x, int y ){
         this.x = x;
         this.y = y;
         numberOfPoint++; // Incrementation de numberOfPoint

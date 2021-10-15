@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"fr.dauphine.javaavance.td1"},{"l":"fr.dauphine.javaavance.td2"}]
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"fr.dauphine.javaavance.td1"},{"l":"fr.dauphine.javaavance.td2"},{"l":"fr.dauphine.javaavance.td3"},{"l":"fr.dauphine.javaavance.td3.controller"},{"l":"fr.dauphine.javaavance.td3.model"},{"l":"fr.dauphine.javaavance.td3.view"}]
