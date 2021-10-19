@@ -18,7 +18,7 @@ public class FormVue extends JFrame {
      * Notre Panel speciale qui sera incorporer dans la fenetre de Vue
      */
     private  PaintPanel mousePanel;
-    private Label I;
+
 
     /**
      *

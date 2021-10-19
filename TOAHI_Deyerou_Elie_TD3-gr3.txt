@@ -1,0 +1,43 @@
+## Exercie 1
+
+1- Classe Graphics est une classe abstraite et fait partie du package java.awt qui permet au classe qui l'implement d'effectuer des dessins 
+
+La classe Graphics2D est une classe qui implement la classe Graphics et permet d'apporter plus de fonctionnalités aux dessins basique que fourni la classe Graphics 
+
+JFrame herite de la classe Frame et represente le support principale des composants Swing dans l'architecture des IHM. C'est la fenetre qui peut comportée des titres, bordures etc.
+
+JPanel herite de la class JComponent. Le JPanel est un container  swing qui peut acceuillir les  composant swing et comporte des methodes qui permet d'interagir avec ces coomposants
+
+2-Voir code
+
+3- Voir code
+
+-il  y a 5 instructions 
+
+JFrame frame = new JFrame("Java Avancé - Graphic Display"); // Declaration d'une nouvelle fenetre avec un titre 
+ frame.setSize(new Dimension(500,500));
+
+//Definition de la taille de la fenetre
+ frame.setVisible(true);
+
+//On la rend visible car par default les fenetre ne sont pas visibles 
+ frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//Sans cette instruction, après le fermeture de la fenetre le code correspondant sera toujours en cours dans la console. 
+Cette instruction permet de fermer non seulement la fenetre mais aussi le code source de la fenetre
+
+
+MyDisplay d = new MyDisplay();
+
+frame.add(d);   // Permet de modifier le panel par défault de frame et lui ajouter d qui est de type display comme nouveau JPanel
+
+4-Voir code
+
+5-La methode paintComponent est appellée automatiquement lors de l'affichage du JPanel 
+
+Elle est aussi appellée inderectement lors d'un evenement produit par un utilisateur. 
+
+Dans ce cas là les ecouteurs attendent un evenement venant des composants ou du user de la fenetre et selon l'evenement la methode paintComponent est invoquée avec repaint()
+
+6-la difference entre java.awt et java.swing est que le package awt est natif de Java et 
+
+depend fortement du système d'exploitation  tandis que le package.awt est lui une extension  de java.awt et ne depend pas du OS
