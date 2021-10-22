@@ -3,7 +3,14 @@ package fr.dauphine.javaavance.td4;
 public class MyList {
     private Cell head = null;
 
-    public void add(String  value){
+    /**
+     *
+     * @param value
+     */
+    public void add(String  value) throws  NullPointerException{
+
+        if(value == null)
+            throw new NullPointerException();
         //Creation d'une Cell de stockage
         Cell myHead = new Cell(value);
         // Head deviens sa prochaine cell juste pour stocker head et cette Cell devient Head
@@ -11,6 +18,13 @@ public class MyList {
         myHead.setNextCell(head);
         head = myHead;
     }
+
+    /**
+     *
+     * @return
+     */
+
+    //Modification de Size pas compris encore
     public int size(){
         int numberOfElements = 0;
         Cell currentCell = head;
@@ -23,18 +37,27 @@ public class MyList {
         return numberOfElements;
     }
 
+    /**
+     *
+     * @return
+     */
    public String toString(){
         // Initialiser ma Cell courant par le head
        Cell currentCell = head;
 
        // String d'initialisation vide a laquelle s'ajoutera la valeur de la lsite
-       String str = " ";
+       String str = "";
 
        //Tant que la Cell courant n'est pas null elle même alors j'ai au moins un element donc
        //je peux afficher la valeur presente dans cette Cell
        while (currentCell != null){
 
-           str = str + currentCell.getValue() + " -> ";
+
+           if (currentCell.getNextCell() == null) {
+               str = str + currentCell.getValue();
+           } else {
+               str = str + currentCell.getValue() + ", ";
+           }
 
            //Si la Cell courante n'est pas null et que la Cell vers laquelle elle pointe
            // n'est pas null alors elle devient ma Cell courante
@@ -43,7 +66,15 @@ public class MyList {
 
        return  str;
    }
-   public void addLast(String value){
+
+    /**
+     *
+     * @param value
+     */
+   public void addLast(String value)throws  NullPointerException{
+
+       if(value == null)
+           throw new NullPointerException();
         // Creation d'une Cell qui stocke la nouvelle et cette
        //Cell doit ête la derniere de la liste
 
@@ -54,6 +85,7 @@ public class MyList {
         // le valeur dans la premiere Cell donc le Head
        if (head == null) {
            head = new Cell(value);
+           return;
        }
 
        // Sinon definition par defaut de head comme la derniere Cell de notre liste
@@ -67,25 +99,60 @@ public class MyList {
        defaultEndCellOfList.setNextCell(myEndCell);
    }
 
-   public void add(String value, int index){
+    /**
+     *
+     * @param value valeur que l'on veut ajoutée dans la liste
+     * @param index position de la cellule où ajouter value
+     */
 
+   public void add(String value, int index){
+       Cell currentCell = head;
+       int j = 0;
+       //Verfication de l'index entré par le user
         if(index>this.size()){
-            System.out.println("Index hors de la liste");
+            addLast(value);
             return;
         }
-        Cell CellOfSave = new Cell(value);
-        Cell currentCell = head;
-        int j = 0;
-        while (j != index){
-                if(currentCell == null){
-                    head = CellOfSave;
-                    return;
-                } else {
-                    currentCell = currentCell.getNextCell();
-                }
-            j++;
+        if(currentCell == null){
+            add(value);
+            return;
         }
-        currentCell.setNextCell(CellOfSave);
-   }
+        while (j != index){
+                if(currentCell != null)
+                    currentCell = currentCell.getNextCell();
+                j++;
+        }
+        currentCell.getNextCell().setValue(value);
+  }
 
+    /**
+     *
+     * @param index
+     * @return la valeur contenue dans la cellule à la position index dans la liste
+     */
+  public String get(int index) throws IllegalArgumentException {
+
+        Cell currentCell = head;
+        String str = "";
+        String  CellContent = "";
+        int i = 0;
+        if(index > this.size() || index < 0)
+            throw  new IllegalArgumentException();
+
+        if(currentCell == null)
+            return str + " null";
+        while ( i != index){
+            if(currentCell != null)
+                currentCell = currentCell.getNextCell();
+            i++;
+        }
+        CellContent+= currentCell.getValue();
+        return str + CellContent;
+  }
+
+
+//    public int sumLetter() {
+//    }
 }
+
+

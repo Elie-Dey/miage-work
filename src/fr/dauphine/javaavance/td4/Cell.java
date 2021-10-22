@@ -24,4 +24,5 @@ public class Cell {
     public void setNextCell(Cell nextCell) {
         this.nextCell = nextCell;
     }
+
 }
