@@ -98,14 +98,14 @@ import static org.junit.Assert.assertEquals;
             l.get(10);
         }
 
-//        @Test
-//        public void sumLetterTest() {
-//            MyList l = new MyList();
-//            l.addLast("totoo");
-//            l.add("toto");
-//            l.add("titi");
-//            assertEquals(13, l.sumLetter());
-//        }
+        @Test
+        public void sumLetterTest() {
+            MyList l = new MyList();
+            l.addLast("totoo");
+            l.add("toto");
+            l.add("titi");
+            assertEquals(13, l.sumLetter());
+        }
 
         @Test(expected=NullPointerException.class)
         public void addNull() {
@@ -121,13 +121,13 @@ import static org.junit.Assert.assertEquals;
             l.addLast(null);
         }
 
-//        @Test(expected=NullPointerException.class)
-//        public void sumNull() {
-//            MyList l = new MyList();
-//            l.add("totoo");
-//            l.add(null);
-//            assertEquals(5, l.sumLetter());
-//        }
+        @Test(expected=NullPointerException.class)
+        public void sumNull() {
+            MyList l = new MyList();
+            l.add("totoo");
+            l.add(null);
+            assertEquals(5, l.sumLetter());
+        }
 
         @Test(timeout=1000)
         public void toStringSpeed() {

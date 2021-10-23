@@ -154,6 +154,11 @@ public class MyListGeneric {
 //    public int sumLetter() {
 //    }
 
+    /**
+     *
+     * @param verifObjet
+     * @return
+     */
     public boolean contains(Object verifObjet) {
         CellGeneric currentCellGeneric = head;
         if (head == null) {

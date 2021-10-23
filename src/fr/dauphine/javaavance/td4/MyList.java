@@ -151,8 +151,17 @@ public class MyList {
   }
 
 
-//    public int sumLetter() {
-//    }
+    public int sumLetter() {
+      Cell currentCell = head;
+      int somme = 0;
+      if(currentCell == null)
+          return somme;
+      while (currentCell != null){
+          somme = somme +  currentCell.getValue().length();
+          currentCell = currentCell.getNextCell();
+      }
+      return somme;
+    }
 }
 
 

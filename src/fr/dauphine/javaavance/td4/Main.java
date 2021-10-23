@@ -14,10 +14,12 @@ public class Main {
 
 
 
-//        l.addLast("z");
-//        l.add("toto");
-//        l.add("toto");
-//        l.addLast("ez");
+        l.addLast("z");
+        l.add("toto");
+        l.add("toto");
+        l.addLast("ez");
+        System.out.println(l);
+        System.out.println(l.sumLetter());
 
 //        ml.add("Tata");
 //        ml.add("Toto");
