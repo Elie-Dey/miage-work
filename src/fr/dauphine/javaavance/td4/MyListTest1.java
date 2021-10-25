@@ -73,7 +73,7 @@ import static org.junit.Assert.assertEquals;
         }
 
         @Test
-        public void getList2() throws Exception {
+        public void getList2() throws IndexOutOfBoundsException{
             MyList l = new MyList();
             l.addLast("toto2");
             l.add("toto");

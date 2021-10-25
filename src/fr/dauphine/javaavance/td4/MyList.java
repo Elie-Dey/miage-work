@@ -130,14 +130,14 @@ public class MyList {
      * @param index
      * @return la valeur contenue dans la cellule à la position index dans la liste
      */
-  public String get(int index) throws IllegalArgumentException {
+  public String get(int index) throws IndexOutOfBoundsException{
 
         Cell currentCell = head;
         String str = "";
         String  CellContent = "";
         int i = 0;
         if(index > this.size() || index < 0)
-            throw  new IllegalArgumentException();
+            throw  new IndexOutOfBoundsException();
 
         if(currentCell == null)
             return str + " null";

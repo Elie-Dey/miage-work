@@ -47,4 +47,9 @@ public class Point {
         Point newPoint = new Point(x + dx,y + dy);
         return newPoint;
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getX(), getY());
+    }
 }
