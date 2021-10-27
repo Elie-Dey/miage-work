@@ -1,10 +1,12 @@
 package fr.dauphine.javaavance.td1;
 
+import java.util.Objects;
+
 public class Circle {
     private int radius;
     private Point center;
 
-    Circle(Point centerOftheCirle, int radiusOfTheCircle){
+    public Circle(Point centerOftheCirle, int radiusOfTheCircle){
         this.radius = radiusOfTheCircle;
         this.center = centerOftheCirle;
     }
@@ -70,5 +72,18 @@ public class Circle {
             }
         }
         return  isPresent;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Circle)) return false;
+        Circle circle = (Circle) o;
+        return getRadius() == circle.getRadius() && Objects.equals(getCenter(), circle.getCenter());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getRadius(), getCenter());
     }
 }

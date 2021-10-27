@@ -1,7 +1,5 @@
 package fr.dauphine.javaavance.td1;
 
-import java.util.Objects;
-
 public class Point {
     private int x;
     private int y;
@@ -50,6 +48,6 @@ public class Point {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getX(), getY());
+        return Integer.rotateLeft(y,16);
     }
 }
