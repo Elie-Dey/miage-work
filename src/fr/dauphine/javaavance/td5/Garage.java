@@ -6,22 +6,20 @@ import java.util.Objects;
  * @author Elie
  */
 public class Garage {
-    private ArrayList<Car> carList;
-    private static  int id;
+    private ArrayList<Vehicule> carList;
+    private static  int idGarage;
 
     /**
      *
-     * @param carList
      */
-    public Garage(ArrayList<Car> carList) {
-        this.carList = carList;
+    public Garage() {
+        carList = new ArrayList<>();
     }
-
     /**
      *
      * @param addedCar
      */
-    public void addCar(Car addedCar){
+    public void addCar(Vehicule addedCar){
         carList.add(Objects.requireNonNull(addedCar));
     }
     /**
@@ -29,10 +27,19 @@ public class Garage {
      * @return
      */
     public static int getId() {
-        return id;
+        return idGarage;
     }
 
+
+
     // Question 8 Essayer de comprendre StringBuilder
+
+    public void affichage(){
+        for (Vehicule car:
+             carList) {
+            System.out.println(car);
+        }
+    }
 
     /**
      *
@@ -40,7 +47,7 @@ public class Garage {
      */
     public long GarageValue(){
         Long garageValue  = 0L;
-        for (Car car :carList) {
+        for (Vehicule car :carList) {
             garageValue = garageValue + car.getValue();
         }
         return  garageValue;
@@ -51,16 +58,26 @@ public class Garage {
      * @param searchBrand
      * @return
      */
-    public Car firstCarByBrand(String searchBrand){
-        Car fistCar = null;
-        for (Car car: carList) {
+    public Vehicule firstCarByBrand(String searchBrand){
+        Vehicule firstCar = null;
+        for (Vehicule car: carList) {
             if(car.getBrand() == searchBrand)
-                fistCar = car;
+                firstCar = car;
         }
-        return fistCar;
+        return firstCar;
     }
 
     // Que faire si il y a pas la voiture
 
+    public void remove(Car removeCar){
+        int indexOfRemoveCar = 0;
+        if(carList.contains(removeCar)){
+            indexOfRemoveCar = carList.indexOf(removeCar);
+            carList.remove(indexOfRemoveCar);
+        } else {
+            throw new IllegalArgumentException("Car absente dans le garage");
+        }
+
+    }
 
 }
