@@ -8,45 +8,33 @@ public class Main {
 
         Car a = new Car("Audi",10000);
         Car b = new Car("BMW",11000);
-        Car f = new Car("BMW",1000);
-        Car h = new Car("BMW",7000);
-        Car c = new Car("BMW",9000);
+        Car f = new Car("ZMW",1000);
+        Car h = new Car("TMW",7000);
+        Car p = new Car("BMW",9000);
         Car d = a;
 
         Bike bike = new Bike("Decath");
         Bike bmx = new Bike("Bmx");
-
+        Bike zmx = new Bike("Zmx");
 
 
         Garage g = new Garage();
-        g.addCar(a);
         g.addCar(b);
-        g.addCar(f);
-        g.addCar(h);
-
-        g.addCar(bike);
+        g.addCar(zmx);
         g.addCar(bmx);
+        g.addCar(bike);
+        g.addCar(a);
+        g.addCar(h);
+        g.addCar(f);
+        g.addCar(p);
 
-       //g.affichage();
-       //g.remove(c);
-        System.out.println("========");
+
         g.affichage();
-
-        System.out.println(g.GarageValue());
-//        System.out.println(a==b);
-//        System.out.println(b==c);
-//        System.out.println(a==d);
-//        System.out.println(a.equals(b));
-//        System.out.println(b.equals(c));
-//        System.out.println(a.equals(d));
-
-//        ArrayList<Car> list = new ArrayList<>();
-//        list.add(a);
-//        list.add(b);
-//
-//        System.out.println(list.indexOf(a));
-//        System.out.println(list.indexOf(b));
-//        System.out.println(list.indexOf(c));
-//        System.out.println(b.equals(c));
+        System.out.println();
+        System.out.println("============================ ");
+        System.out.println(g.firstCarByBrand("BMW"));
+        //g.trie();
+        //Echec Test parce que les paramettres sont pas les bons
+        //Resultat non statifaisant parce que il ne sont pas ordonnés
     }
 }

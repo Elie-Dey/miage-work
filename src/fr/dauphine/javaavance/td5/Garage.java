@@ -1,5 +1,7 @@
 package fr.dauphine.javaavance.td5;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Objects;
 
 /**
@@ -21,6 +23,7 @@ public class Garage {
      */
     public void addCar(Vehicule addedCar){
         carList.add(Objects.requireNonNull(addedCar));
+        Collections.sort(carList, Vehicule.vehiculeComparator);
     }
     /**
      *
@@ -30,14 +33,12 @@ public class Garage {
         return idGarage;
     }
 
-
-
     // Question 8 Essayer de comprendre StringBuilder
 
     public void affichage(){
         for (Vehicule car:
              carList) {
-            System.out.println(car);
+            System.out.print(car);
         }
     }
 
@@ -45,8 +46,8 @@ public class Garage {
      *
      * @return
      */
-    public long GarageValue(){
-        Long garageValue  = 0L;
+    public int GarageValue(){
+        int garageValue  = 0;
         for (Vehicule car :carList) {
             garageValue = garageValue + car.getValue();
         }
@@ -59,17 +60,22 @@ public class Garage {
      * @return
      */
     public Vehicule firstCarByBrand(String searchBrand){
-        Vehicule firstCar = null;
-        for (Vehicule car: carList) {
-            if(car.getBrand() == searchBrand)
-                firstCar = car;
+       ArrayList<Vehicule> internList = new ArrayList<>();
+        for (int i = 0; i < carList.size() ; i++) {
+            if(carList.get(i).getBrand() == searchBrand)
+                internList.add(carList.get(i));
         }
-        return firstCar;
+
+        return internList.get(0);
     }
 
     // Que faire si il y a pas la voiture
 
-    public void remove(Car removeCar){
+    /**
+     *
+     * @param removeCar
+     */
+    public void remove(Vehicule removeCar){
         int indexOfRemoveCar = 0;
         if(carList.contains(removeCar)){
             indexOfRemoveCar = carList.indexOf(removeCar);
@@ -79,5 +85,23 @@ public class Garage {
         }
 
     }
+
+    /**
+     *
+     * @param brand
+     */
+    public void protectionism(String brand){
+        int som = 0;
+        for (int i = 0; i < carList.size() ; i++) {
+            if(carList.get(i).getBrand() == brand)
+                carList.remove(i);
+                //i--;
+        }
+    }
+
+    public boolean equals(Garage garage) {
+        return  carList.equals(garage.carList);
+    }
+
 
 }

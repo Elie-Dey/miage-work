@@ -1,28 +1,25 @@
 package fr.dauphine.javaavance.td5;
 
-public class Bike implements  Vehicule{
-    private String brand;
-    private  static int BIKE_VALUE = 100;
+public class Bike extends Vehicule{
+    private  static final int value = 100;
 
     public Bike(String brand) {
-        this.brand = brand;
+        super(brand);
     }
-
     @Override
     public String toString() {
         return "Bike{" +
-                "brand='" + brand + '\'' +
+                "brand='" + super.getBrand() + '\'' +
                 '}';
     }
-
     @Override
     public String getBrand() {
-        return this.brand;
+        return super.getBrand();
     }
 
     @Override
     public int getValue() {
-        return BIKE_VALUE;
+        return value;
     }
 
 }
