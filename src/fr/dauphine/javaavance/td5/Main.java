@@ -33,7 +33,7 @@ public class Main {
         System.out.println();
         System.out.println("============================ ");
         System.out.println(g.firstCarByBrand("BMW"));
-        //g.trie();
+
         //Echec Test parce que les paramettres sont pas les bons
         //Resultat non statifaisant parce que il ne sont pas ordonnés
     }

@@ -36,10 +36,13 @@ public class Garage {
     // Question 8 Essayer de comprendre StringBuilder
 
     public void affichage(){
+        StringBuilder stringBuilder = new StringBuilder();
         for (Vehicule car:
              carList) {
-            System.out.print(car);
+            stringBuilder.append(car);
         }
+        String result = stringBuilder.toString();
+        System.out.println(result);
     }
 
     /**

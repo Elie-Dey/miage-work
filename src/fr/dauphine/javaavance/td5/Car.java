@@ -69,7 +69,7 @@ public class Car  extends Vehicule{
      */
     @Override
     public String toString() {
-        return super.getBrand() + "," + value;
+        return super.getBrand() + "," + value + "\n";
     }
 
 
