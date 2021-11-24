@@ -42,8 +42,11 @@ public class DirMonitor {
            }
        }
    }
-
-   // Affichage avec la classe prefix dans un autre fichier
+    /**
+     *
+     * Affichage avec la classe prefix dans un autre fichier
+     *
+     */
 //    public void affichage2() throws IOException {
 //       PrefixFilter filter = new PrefixFilter(30);
 //        try (DirectoryStream<Path> ds = newDirectoryStream(path, filter)) {
@@ -57,6 +60,11 @@ public class DirMonitor {
 //        }
 //    }
 
+    /**
+     *
+     * Affichage avec la classe prefix en classe interne
+     *
+     */
 //    public void affichage3() throws IOException {
 //       PrefixFilter filter = new DirMonitor.PrefixFilter(30);
 //        try (DirectoryStream<Path> ds = newDirectoryStream(path, filter)) {
@@ -69,6 +77,13 @@ public class DirMonitor {
 //            e.printStackTrace();
 //        }
 //    }
+
+    /**
+     *
+     * @param prefix sur lequel faire une action
+     * @param action
+     * @throws IOException
+     */
     public void applyAction(String prefix, MyAction action) throws  IOException {
        Path path = Path.of(prefix);
        if((path == null) || !Files.exists(path))
@@ -76,30 +91,7 @@ public class DirMonitor {
        action.perform(path);
 
     }
-
     /**
-     *
-     * @param givenFileSize
-     * @throws IOException
-     */
-    public void affichage5(int givenFileSize) throws IOException {
-       MyAction act;
-       applyAction(String.valueOf(path), act = new MyAction() {
-                   @Override
-                   public void perform(Path performPath) throws IOException {
-                       PrefixFilter filter = new PrefixFilter(50);
-                       DirectoryStream<Path> ds = newDirectoryStream(path, filter);
-                       Iterator<Path> iterator = ds.iterator();
-                       while (iterator.hasNext()) {
-                           Path p = iterator.next();
-                           System.out.println(p.getFileName());
-                       }
-                   }
-               });
-    }
-
-    /**
-     *
      * @param givenFileSize taille minimum du fichier
      * @throws IOException
      */
@@ -124,10 +116,29 @@ public class DirMonitor {
         }
     }
 
-
     /**
      *
-     *
+     * @param givenFileSize taille mininum que doit avoir le fichier
+     * @throws IOException pour les path null
+     */
+    public void affichage5(int givenFileSize) throws IOException {
+       MyAction act;
+       applyAction(String.valueOf(path), act = new MyAction() {
+                   @Override
+                   public void perform(Path performPath) throws IOException {
+                       PrefixFilter filter = new PrefixFilter(42000);
+                       DirectoryStream<Path> ds = newDirectoryStream(path, filter);
+                       Iterator<Path> iterator = ds.iterator();
+                       while (iterator.hasNext()) {
+                           Path p = iterator.next();
+                           System.out.println(p.getFileName());
+                       }
+                   }
+               });
+    }
+
+   // public long sizeOfFile(int givenFileSize) throws  IOException{ }
+    /**
      * @return la somme de la taille des fichiers présent dans le repo
      */
    public long sizeOfFiles() throws Exception {
@@ -148,9 +159,12 @@ public class DirMonitor {
             }
         } catch (Exception e){}
        return  sumOfOctet;
-
-
    }
+
+    /**
+     *
+     * @return le fichier le plus recent en terme de modification
+     */
    public File mostRecent(){
        // Creation de tableau de tous les fichier présent dans le directory path
        File[] listOfFiles = path.toFile().listFiles();
@@ -166,6 +180,9 @@ public class DirMonitor {
        return lastModifiedFile;
    }
 
+    /**
+     *
+     */
    public class PrefixFilter implements DirectoryStream.Filter<Path> {
            private long  minimumSizeOfFile;
 
